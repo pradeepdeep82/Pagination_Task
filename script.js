@@ -500,9 +500,10 @@ var Data=[
     "email": "Josiane_Smith@yahoo.com"
   }
 ];
-  
-function page_1 (){
-    
+
+
+function page(x){
+  document.getElementById("fintable").innerHTML="";
   var table=document.createElement("table")
   table.setAttribute("class", "table table-striped");
 
@@ -519,7 +520,7 @@ function page_1 (){
 
   var tbody=document.createElement("tbody");
   
-  for(i=0;i<10;i++){
+  for(i=(x-1)*10;i<x*10;i++){
     var ctrow=document.createElement("tr");
     var Sno=document.createElement("th");
     Sno.innerHTML=Data[i].id;
@@ -532,297 +533,21 @@ function page_1 (){
     }
     table.append(thead, tbody);
     fintable.append(table);
+  localStorage.setItem("pageNo", x); 
+}
+
+function prev(){
+   let a=localStorage.getItem("pageNo");
+    page(a-1);
+    
+ }
+function next(){
+  let a=localStorage.getItem("pageNo");
+    page(++a);
     
 }
 
-function page_2 (){
-  
-  var table=document.createElement("table")
-  table.setAttribute("class", "table table-striped");
 
-  var thead=document.createElement("thead");
-  var hrow=document.createElement("tr")
-  var id=document.createElement("th");
-  id.innerHTML="id";
-  var name=document.createElement("th");
-  name.innerHTML="name";
-  var email=document.createElement("th");
-  email.innerHTML="email";
-  hrow.append(id,name, email);
-  thead.append(hrow);
-
-  var tbody=document.createElement("tbody");
-  
-  for(i=10;i<20;i++){
-    var ctrow=document.createElement("tr");
-    var Sno=document.createElement("th");
-    Sno.innerHTML=Data[i].id;
-    var name=document.createElement("td");
-    name.innerHTML=Data[i].name;
-    var email=document.createElement("td");
-    email.innerHTML=Data[i].email;
-    ctrow.append(Sno, name, email);
-    tbody.append(ctrow);
-    }
-    table.append(thead, tbody);
-    fintable.append(table);    
-}
-function page_3 (){
-  
-  var table=document.createElement("table")
-  table.setAttribute("class", "table table-striped");
-
-  var thead=document.createElement("thead");
-  var hrow=document.createElement("tr")
-  var id=document.createElement("th");
-  id.innerHTML="id";
-  var name=document.createElement("th");
-  name.innerHTML="name";
-  var email=document.createElement("th");
-  email.innerHTML="email";
-  hrow.append(id,name, email);
-  thead.append(hrow);
-
-  var tbody=document.createElement("tbody");
-  
-  for(i=20;i<30;i++){
-    var ctrow=document.createElement("tr");
-    var Sno=document.createElement("th");
-    Sno.innerHTML=Data[i].id;
-    var name=document.createElement("td");
-    name.innerHTML=Data[i].name;
-    var email=document.createElement("td");
-    email.innerHTML=Data[i].email;
-    ctrow.append(Sno, name, email);
-    tbody.append(ctrow);
-    }
-    table.append(thead, tbody);
-    fintable.append(table);    
-}
-function page_4 (){
-  
-  var table=document.createElement("table")
-  table.setAttribute("class", "table table-striped");
-
-  var thead=document.createElement("thead");
-  var hrow=document.createElement("tr")
-  var id=document.createElement("th");
-  id.innerHTML="id";
-  var name=document.createElement("th");
-  name.innerHTML="name";
-  var email=document.createElement("th");
-  email.innerHTML="email";
-  hrow.append(id,name, email);
-  thead.append(hrow);
-
-  var tbody=document.createElement("tbody");
-  
-  for(i=30;i<40;i++){
-    var ctrow=document.createElement("tr");
-    var Sno=document.createElement("th");
-    Sno.innerHTML=Data[i].id;
-    var name=document.createElement("td");
-    name.innerHTML=Data[i].name;
-    var email=document.createElement("td");
-    email.innerHTML=Data[i].email;
-    ctrow.append(Sno, name, email);
-    tbody.append(ctrow);
-    }
-    table.append(thead, tbody);
-    fintable.append(table);    
-}
-function page_5 (){
-  
-  var table=document.createElement("table")
-  table.setAttribute("class", "table table-striped");
-
-  var thead=document.createElement("thead");
-  var hrow=document.createElement("tr")
-  var id=document.createElement("th");
-  id.innerHTML="id";
-  var name=document.createElement("th");
-  name.innerHTML="name";
-  var email=document.createElement("th");
-  email.innerHTML="email";
-  hrow.append(id,name, email);
-  thead.append(hrow);
-
-  var tbody=document.createElement("tbody");
-  
-  for(i=40;i<50;i++){
-    var ctrow=document.createElement("tr");
-    var Sno=document.createElement("th");
-    Sno.innerHTML=Data[i].id;
-    var name=document.createElement("td");
-    name.innerHTML=Data[i].name;
-    var email=document.createElement("td");
-    email.innerHTML=Data[i].email;
-    ctrow.append(Sno, name, email);
-    tbody.append(ctrow);
-    }
-    table.append(thead, tbody);
-    fintable.append(table);    
-}
-function page_6 (){
-  
-  var table=document.createElement("table")
-  table.setAttribute("class", "table table-striped");
-
-  var thead=document.createElement("thead");
-  var hrow=document.createElement("tr")
-  var id=document.createElement("th");
-  id.innerHTML="id";
-  var name=document.createElement("th");
-  name.innerHTML="name";
-  var email=document.createElement("th");
-  email.innerHTML="email";
-  hrow.append(id,name, email);
-  thead.append(hrow);
-
-  var tbody=document.createElement("tbody");
-  
-  for(i=50;i<60;i++){
-    var ctrow=document.createElement("tr");
-    var Sno=document.createElement("th");
-    Sno.innerHTML=Data[i].id;
-    var name=document.createElement("td");
-    name.innerHTML=Data[i].name;
-    var email=document.createElement("td");
-    email.innerHTML=Data[i].email;
-    ctrow.append(Sno, name, email);
-    tbody.append(ctrow);
-    }
-    table.append(thead, tbody);
-    fintable.append(table);    
-}
-function page_7 (){
-  
-  var table=document.createElement("table")
-  table.setAttribute("class", "table table-striped");
-
-  var thead=document.createElement("thead");
-  var hrow=document.createElement("tr")
-  var id=document.createElement("th");
-  id.innerHTML="id";
-  var name=document.createElement("th");
-  name.innerHTML="name";
-  var email=document.createElement("th");
-  email.innerHTML="email";
-  hrow.append(id,name, email);
-  thead.append(hrow);
-
-  var tbody=document.createElement("tbody");
-  
-  for(i=60;i<70;i++){
-    var ctrow=document.createElement("tr");
-    var Sno=document.createElement("th");
-    Sno.innerHTML=Data[i].id;
-    var name=document.createElement("td");
-    name.innerHTML=Data[i].name;
-    var email=document.createElement("td");
-    email.innerHTML=Data[i].email;
-    ctrow.append(Sno, name, email);
-    tbody.append(ctrow);
-    }
-    table.append(thead, tbody);
-    fintable.append(table);    
-}
-function page_8 (){
-  
-  var table=document.createElement("table")
-  table.setAttribute("class", "table table-striped");
-
-  var thead=document.createElement("thead");
-  var hrow=document.createElement("tr")
-  var id=document.createElement("th");
-  id.innerHTML="id";
-  var name=document.createElement("th");
-  name.innerHTML="name";
-  var email=document.createElement("th");
-  email.innerHTML="email";
-  hrow.append(id,name, email);
-  thead.append(hrow);
-
-  var tbody=document.createElement("tbody");
-  
-  for(i=70;i<80;i++){
-    var ctrow=document.createElement("tr");
-    var Sno=document.createElement("th");
-    Sno.innerHTML=Data[i].id;
-    var name=document.createElement("td");
-    name.innerHTML=Data[i].name;
-    var email=document.createElement("td");
-    email.innerHTML=Data[i].email;
-    ctrow.append(Sno, name, email);
-    tbody.append(ctrow);
-    }
-    table.append(thead, tbody);
-    fintable.append(table);    
-}
-function page_9 (){
-  
-  var table=document.createElement("table")
-  table.setAttribute("class", "table table-striped");
-
-  var thead=document.createElement("thead");
-  var hrow=document.createElement("tr")
-  var id=document.createElement("th");
-  id.innerHTML="id";
-  var name=document.createElement("th");
-  name.innerHTML="name";
-  var email=document.createElement("th");
-  email.innerHTML="email";
-  hrow.append(id,name, email);
-  thead.append(hrow);
-
-  var tbody=document.createElement("tbody");
-  
-  for(i=80;i<90;i++){
-    var ctrow=document.createElement("tr");
-    var Sno=document.createElement("th");
-    Sno.innerHTML=Data[i].id;
-    var name=document.createElement("td");
-    name.innerHTML=Data[i].name;
-    var email=document.createElement("td");
-    email.innerHTML=Data[i].email;
-    ctrow.append(Sno, name, email);
-    tbody.append(ctrow);
-    }
-    table.append(thead, tbody);
-    fintable.append(table);    
-}
-function page_10 (){
-  
-  var table=document.createElement("table")
-  table.setAttribute("class", "table table-striped");
-
-  var thead=document.createElement("thead");
-  var hrow=document.createElement("tr")
-  var id=document.createElement("th");
-  id.innerHTML="id";
-  var name=document.createElement("th");
-  name.innerHTML="name";
-  var email=document.createElement("th");
-  email.innerHTML="email";
-  hrow.append(id,name, email);
-  thead.append(hrow);
-
-  var tbody=document.createElement("tbody");
-  
-  for(i=90;i<100;i++){
-    var ctrow=document.createElement("tr");
-    var Sno=document.createElement("th");
-    Sno.innerHTML=Data[i].id;
-    var name=document.createElement("td");
-    name.innerHTML=Data[i].name;
-    var email=document.createElement("td");
-    email.innerHTML=Data[i].email;
-    ctrow.append(Sno, name, email);
-    tbody.append(ctrow);
-    }
-    table.append(thead, tbody);
-    fintable.append(table);    
-}
 
 
 
